@@ -1,0 +1,174 @@
+/* Fonte e Importação de Fontes */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #012a4a;
+  color: white;
+  background-image: url("src/img/Fundo.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  line-height: 1.6;
+}
+
+header {
+  background-color: rgba(0, 45, 85, 0.9);
+  padding: 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+nav ul li a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #e1b12c;
+  border-radius: 5px;
+}
+
+main {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* Main image grandona no topo com o texto embaixo */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer; /* Cursor pointer adicionado */
+  margin-bottom: 40px;
+}
+.main-content:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.main-content:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* Sombra mais intensa no hover */
+}
+.main-image {
+  width: 100%;
+  max-width: 1200px; /* Limitar o tamanho da imagem em telas grandes */
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.text-section {
+  width: 80%;
+  font-size: 22px; /* Texto maior */
+  font-weight: 700; /* Texto em negrito */
+  line-height: 1.8;
+  text-align: center;
+}
+
+/* Blocos de conteúdo abaixo */
+.secondary-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer; /* Cursor pointer adicionado */
+  margin-bottom: 40px;
+}
+
+.block:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* Sombra mais intensa no hover */
+}
+
+.secondary-image {
+  width: 45%;
+  border-radius: 10px;
+}
+
+.block p {
+  width: 50%;
+  font-size: 22px; /* Texto maior */
+  font-weight: 700; /* Texto em negrito */
+  line-height: 1.8;
+  margin: 0 20px;
+}
+
+.block:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+footer {
+  background-color: rgba(0, 45, 85, 0.1);
+  padding: 15px;
+  text-align: center;
+  color: #f0f0f0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  font-size: 14px;
+}
+
+/* Mobile Responsividade */
+@media (max-width: 768px) {
+  .main-content {
+    text-align: center;
+  }
+
+  .main-image {
+    width: 100%;
+  }
+
+  .text-section {
+    width: 100%;
+    font-size: 20px;
+  }
+
+  .block {
+    flex-direction: column;
+  }
+
+  .secondary-image {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .block p {
+    width: 100%;
+    font-size: 20px;
+  }
+}
