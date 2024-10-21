@@ -17,6 +17,7 @@ body {
   background-attachment: fixed;
   background-position: center;
   line-height: 1.6;
+  padding: 0 10px; /* Padding geral para evitar conteúdo grudado nas laterais */
 }
 
 header {
@@ -29,6 +30,7 @@ nav ul {
   display: flex;
   justify-content: space-around;
   padding: 10px;
+  flex-wrap: wrap; /* Permitir quebra de linha em telas menores */
 }
 
 nav ul li a {
@@ -61,7 +63,7 @@ main {
   border-radius: 15px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer; /* Cursor pointer adicionado */
+  cursor: pointer;
   margin-bottom: 40px;
 }
 .main-content:nth-child(even) {
@@ -70,19 +72,20 @@ main {
 
 .main-content:hover {
   transform: translateY(-10px);
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* Sombra mais intensa no hover */
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
 }
+
 .main-image {
   width: 100%;
-  max-width: 1200px; /* Limitar o tamanho da imagem em telas grandes */
+  max-width: 1200px;
   border-radius: 10px;
   margin-bottom: 20px;
 }
 
 .text-section {
   width: 80%;
-  font-size: 22px; /* Texto maior */
-  font-weight: 700; /* Texto em negrito */
+  font-size: 22px;
+  font-weight: 700;
   line-height: 1.8;
   text-align: center;
 }
@@ -96,37 +99,40 @@ main {
 
 .block {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column; /* Sempre coloca a imagem em cima e o texto embaixo */
+  justify-content: center;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.1);
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer; /* Cursor pointer adicionado */
   margin-bottom: 40px;
 }
 
 .block:hover {
   transform: translateY(-10px);
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* Sombra mais intensa no hover */
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .secondary-image {
-  width: 45%;
+  width: 100%; /* Imagem ocupando toda a largura */
+  max-width: 600px; /* Limite de largura para telas maiores */
   border-radius: 10px;
+  margin-bottom: 20px; /* Espaço entre a imagem e o texto */
 }
 
 .block p {
-  width: 50%;
-  font-size: 22px; /* Texto maior */
-  font-weight: 700; /* Texto em negrito */
+  width: 100%; /* Texto ocupa toda a largura do bloco */
+  font-size: 18px;
+  font-weight: 700;
   line-height: 1.8;
-  margin: 0 20px;
+  text-align: justify;
 }
 
-.block:nth-child(even) {
-  flex-direction: row-reverse;
+.block img {
+  width: 100%; /* Imagem ocupando toda a largura */
+  max-width: 600px; /* Limite de largura para telas maiores */
+  border-radius: 10px;
 }
 
 footer {
@@ -160,15 +166,49 @@ footer p {
 
   .block {
     flex-direction: column;
+    align-items: center;
   }
 
   .secondary-image {
-    width: 90%;
+    width: 100%;
     margin-bottom: 20px;
   }
 
   .block p {
+    font-size: 16px; /* Texto um pouco menor em telas menores */
+  }
+
+  .block img {
     width: 100%;
-    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  nav ul {
+    flex-direction: column; /* Menu vertical em telas menores */
+    text-align: center;
+  }
+}
+
+/* Extra pequeno: Para telas com menos de 480px */
+/* Ajustes gerais para telas pequenas */
+@media (max-width: 480px) {
+  .main-content,
+  .block {
+    flex-direction: column; /* Garantir que texto e imagem fiquem um embaixo do outro */
+    align-items: center; /* Centralizar o conteúdo */
+  }
+
+  .text-section,
+  .block p {
+    width: 100%; /* Texto ocupar toda a largura */
+    font-size: 16px; /* Diminuir tamanho da fonte para caber melhor */
+    line-height: 1.5; /* Melhorar espaçamento entre linhas */
+    word-wrap: break-word; /* Quebra automática de palavras */
+  }
+
+  .main-image,
+  .secondary-image {
+    width: 100%; /* Imagens ocuparem toda a largura */
+    margin-bottom: 20px; /* Espaço entre imagem e texto */
   }
 }
